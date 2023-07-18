@@ -9,21 +9,23 @@ let college = "Chandigarh University";
 function App() {
   const [name, setName] = useState("Rohan");
   return (
-    <Routes>
+    <div>
+      <Routes>
+        <Route path="/" element={<ClassComponent />} />
+        <Route
+          path="/functional"
+          element={
+            <FunctionalComponent
+              name={name}
+              age={age}
+              college={college}
+              setName={setName}
+            />
+          }
+        />
+      </Routes>
       <BaseHoc />
-      <Route path="/" element={<ClassComponent />} />
-      <Route
-        path="/functional"
-        element={
-          <FunctionalComponent
-            name={name}
-            age={age}
-            college={college}
-            setName={setName}
-          />
-        }
-      />
-    </Routes>
+    </div>
 
     // <div className="App">
     //   <h1>Class Based Component</h1>
