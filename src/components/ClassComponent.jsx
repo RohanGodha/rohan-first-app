@@ -13,6 +13,13 @@ class ClassComponent extends React.Component {
   componentDidMount() {
     console.log("Component Did Mount");
   }
+  componentWillUnmount() {
+    console.log("Component Did Mount");
+  }
+
+  componentDidUpdate() {
+    console.log("Component Did Update");
+  }
 
   render() {
     console.log("Render:");

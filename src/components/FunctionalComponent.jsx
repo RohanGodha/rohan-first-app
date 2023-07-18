@@ -1,10 +1,35 @@
 import React from "react";
 import BaseHoc from "../hoc/BaseHoc";
+import { useEffect } from "react";
 import { useState } from "react";
 
 const FunctionalComponent = (props) => {
   const [count, setCount] = useState(1);
   const [changeName, setChangeName] = useState("");
+  const prevRef = React.useRef(changeName);
+
+  useEffect(() => {
+    console.log("Component Did Mount");
+  }, []); // This is called dependency array
+
+  useEffect(() => {
+    console.log("Component Did Update");
+  }, []);
+
+  useEffect(() => {
+    console.log("On Change of Name");
+  }, [changeName]);
+
+  useEffect(() => {
+    console.log("Change of Props");
+  }, [props]);
+
+  //Use of useEffect on previous Reference of change of name by actually using const prevRef = useRef(changeName);
+  useEffect(() => {
+    console.log("Change of Reference Name");
+    console.log(prevRef.current);
+    prevRef.current = changeName;
+  }, [changeName]);
 
   return (
     <div>
