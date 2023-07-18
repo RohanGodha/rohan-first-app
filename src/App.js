@@ -2,7 +2,7 @@ import ClassComponent from "./components/ClassComponent";
 import FunctionalComponent from "./components/FunctionalComponent";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
+import BaseHoc from "./hoc/BaseHoc";
 let age = 22;
 let college = "Chandigarh University";
 
@@ -10,6 +10,7 @@ function App() {
   const [name, setName] = useState("Rohan");
   return (
     <Routes>
+      <BaseHoc />
       <Route path="/" element={<ClassComponent />} />
       <Route
         path="/functional"
